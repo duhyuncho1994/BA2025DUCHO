@@ -1,25 +1,11 @@
 package com.example;
 
-import java.awt.Desktop;
+
 import java.io.FileWriter;
 import java.io.IOException;
 import de.learnlib.algorithm.lstar.dfa.ClassicLStarDFA;
-
-import de.learnlib.algorithm.lstar.dfa.ClassicLStarDFABuilder;
-import de.learnlib.algorithm.ttt.dfa.TTTLearnerDFA;
-import de.learnlib.datastructure.observationtable.OTUtils;
-import de.learnlib.datastructure.observationtable.writer.ObservationTableASCIIWriter;
 import de.learnlib.filter.statistic.oracle.DFACounterOracle;
-import de.learnlib.oracle.MembershipOracle;
-import de.learnlib.oracle.EquivalenceOracle.DFAEquivalenceOracle;
-import de.learnlib.query.*;
-import de.learnlib.oracle.MembershipOracle.DFAMembershipOracle;
-import de.learnlib.oracle.equivalence.*;
-import de.learnlib.oracle.equivalence.DFAWMethodEQOracle;
-import de.learnlib.oracle.membership.DFASimulatorOracle;
-import de.learnlib.oracle.membership.SimulatorOracle;
 import de.learnlib.util.Experiment.DFAExperiment;
-
 import net.automatalib.alphabet.Alphabet;
 import net.automatalib.alphabet.impl.Alphabets;
 import net.automatalib.automaton.fsa.DFA;
