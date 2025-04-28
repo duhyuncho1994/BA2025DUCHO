@@ -55,7 +55,7 @@ public class main2 {
 
                 writer.write(inputStr + " -> " + (output ? "1" : "0") + "\n");
             }
-            System.out.println("✅ Dataset 저장 완료: datase1t_output.txt");
+            System.out.println("Dataset saved: datase1t_output.txt");
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -72,7 +72,7 @@ public class main2 {
 
                 writer.write(inputStr + " -> " + (output ? "1" : "0") + "\n");
             }
-            System.out.println("✅ Dataset 저장 완료: testset1_output.txt");
+            System.out.println("Dataset saved: testset1_output.txt");
         } catch (IOException e) {
             e.printStackTrace();
         }
