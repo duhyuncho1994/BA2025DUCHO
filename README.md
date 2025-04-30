@@ -37,3 +37,8 @@ This project investigates how active learning algorithms perform when only a sta
 2. **Build the project**:
 ```bash
 mvn clean install
+
+---
+
+## Overview
+
