@@ -53,4 +53,22 @@ Ensure you’ve placed the correct datasets in the ```/data/``` folder:
 - **train1.gz**
 - **test1.gz**
 
+## How to evaluate Results
 
+The following factors are compared depending on the strategy (e.g., Always No, Nearest Neighbor) used:
+
+- **Dataset used ( e.g., train1.gz with test1.gz)**
+- **Algorithm used (e.g., L star, TTT)**
+- **MQ (Membership Query) count**
+- **EQ (Equivalence Query) count (rounds)**
+- **Accuracy on test set**
+- **Runtime(ms)**
+
+## Evaluation Output
+
+| Algorithm | Strategy       | MQs     | EQs | Accuracy | States | Runtime (ms) |
+|-----------|----------------|---------|-----|----------|--------|---------------|
+| L*        | Always No      | 800000  | 66  | 100%     | 2082   | 2143          |
+| L*        | Always Yes     | 800000  | 82  | 0%       | 1663   | 2121          |
+| L*        | Nearest Neigh. | 790000  | 40  | 95%      | 88     | 1874          |
+| TTT       | Nearest Neigh. | 790000  | 776 | 100%     | 63     | 2018          |
