@@ -38,7 +38,19 @@ This project investigates how active learning algorithms perform when only a sta
 ```bash
 mvn clean install
 
+```
 ---
 
-## Overview
+## How to run Experiments
+```bash
+java -cp target/your-jar-name.jar com.example.Main
+```
+
+Or directly from your IDE (e.g., IntelliJ or VSCode).
+
+Ensure you’ve placed the correct datasets in the /data/ folder:
+
+- **train1.gz**
+- **test1.gz**
+
 
