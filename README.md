@@ -66,9 +66,9 @@ The following factors are compared depending on the strategy (e.g., Always No, N
 
 ## Evaluation Output
 
-| Algorithm | Strategy       | MQs     | EQs | Accuracy | States | Runtime (ms) |
-|-----------|----------------|---------|-----|----------|--------|---------------|
-| L*        | Always No      | 800000  | 66  | 100%     | 2082   | 2143          |
-| L*        | Always Yes     | 800000  | 82  | 0%       | 1663   | 2121          |
-| L*        | Nearest Neigh. | 790000  | 40  | 95%      | 88     | 1874          |
-| TTT       | Nearest Neigh. | 790000  | 776 | 100%     | 63     | 2018          |
+| Dataset | Algorithm | Strategy       | MQs     | EQs | Accuracy | States | Runtime (ms) |
+|-----------|-----------|----------------|---------|-----|----------|--------|---------------|
+|Train1.gz  | L*        | Always No      | 800000  | 66  | 100%     | 2082   | 2143          |
+|Train1.gz  | L*        | Always Yes     | 800000  | 82  | 0%       | 1663   | 2121          |
+|Train1.gz| L*        | Nearest Neigh. | 790000  | 40  | 95%      | 88     | 1874          |
+|Train1.gz| TTT       | Nearest Neigh. | 790000  | 776 | 100%     | 63     | 2018          |
