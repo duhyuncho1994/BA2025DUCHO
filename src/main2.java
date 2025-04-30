@@ -92,8 +92,12 @@ public class main2 {
         // Experiement
         DFAExperiment<Character> experiment = new DFAExperiment<>(learner, teacher, alphabet);
         experiment.setProfile(true);
+        long startTime = System.nanoTime();
         experiment.run();
        
+        long endTime = System.nanoTime();
+        long runtimeMillis = (endTime - startTime) / 1_000_000;
+        System.out.println("Runtime: " + runtimeMillis + " ms");
 
 
         // Print Result
