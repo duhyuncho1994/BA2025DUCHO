@@ -4,10 +4,6 @@ This project investigates how active learning algorithms perform in a passive le
 
 ---
 
-## Project Structure
-
-learnlib-demo/ ├── src/main/java/com/example/ │ ├── Main.java │ ├── ExampleBasedTeacher.java │ ├── DatasetLoader.java │ ├── RandomDatasetGenerator.java │ ├── Evaluator.java │ ├── Algorithms.java ├── data/ │ ├── train.1.gz │ ├── test.1.gz ├── results.csv ├── pom.xml └── README.md
-
 
 ## Overview
 
@@ -61,6 +57,7 @@ Ensure you’ve placed the correct datasets in the ```/data/``` folder:
 - **train1.gz**
 - **test1.gz**
 
+---
 ## How to evaluate Results
 
 The following factors are compared depending on the strategy (e.g., Always No, Nearest Neighbor) used:
@@ -71,7 +68,7 @@ The following factors are compared depending on the strategy (e.g., Always No, N
 - **EQ (Equivalence Query) count (rounds)**
 - **Accuracy on test set**
 - **Runtime(ms)**
-
+---
 ### Evaluation Criteria
 
 | Metric | Description |
@@ -80,7 +77,7 @@ The following factors are compared depending on the strategy (e.g., Always No, N
 | EQcount | Counterexamples found, the number of Rounds |
 | Accuracy | % correct on test set |
 | Runtime | Time taken to learn (ms) |
-
+---
 ## Experiment Strategies
 
 Membership Queries (MQs) answered using different strategies when the word is not in the sample:
@@ -89,7 +86,7 @@ Membership Queries (MQs) answered using different strategies when the word is no
 -  Always No
 -  Random
 -  Nearest Neighbor ((Hamming / Edit Distance)
-
+---
 ## Evaluation Output
 
 | Dataset | Algorithm | Strategy       | MQs     | EQs | Accuracy  | Runtime (ms) |
@@ -98,3 +95,4 @@ Membership Queries (MQs) answered using different strategies when the word is no
 |Train1.gz  | L*        | Always Yes     | 800000  | 82  | 0%          | 2121          |
 |Train1.gz| L*        | Nearest Neigh. | 790000  | 40  | 95%           | 1874          |
 |Train1.gz| TTT       | Nearest Neigh. | 790000  | 776 | 100%          | 2018          |
+---
