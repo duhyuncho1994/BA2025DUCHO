@@ -36,9 +36,9 @@ public class main2 {
        
         // DatasetLoad
         
-        Map<List<Character>, Boolean> dataset = DatasetLoader.load("data/train.1.gz"); // Abbadingo Dataset
+        Map<List<Character>, Boolean> dataset = DatasetLoader.load("data/train.2.gz"); // Abbadingo Dataset
         //Map<List<Character>, Boolean> dataset = RandomDatasetGenerator.generate(targetDFA, alphabet, 100, 6, 42L); //Random dataset
-        Map<List<Character>, Boolean> testSet = DatasetLoader.load("data/test.1.gz"); //  Abbadingo testset
+        Map<List<Character>, Boolean> testSet = DatasetLoader.load("data/test.2.gz"); //  Abbadingo testset
 
 
         // This is just a code to check how gz files are parsed 
@@ -85,16 +85,21 @@ public class main2 {
         DFACounterOracle<Character> mqOracle = new DFACounterOracle<>(teacher);
 
         // Lstar and TTT 
-        //ClassicLStarDFA<Character> learner = Algorithms.createLStar(alphabet, mqOracle);
-        TTTLearnerDFA<Character> learner = Algorithms.createTTT(alphabet, mqOracle);
+        ClassicLStarDFA<Character> learner = Algorithms.createLStar(alphabet, mqOracle);
+        //TTTLearnerDFA<Character> learner = Algorithms.createTTT(alphabet, mqOracle);
        
 
         // Experiement
         DFAExperiment<Character> experiment = new DFAExperiment<>(learner, teacher, alphabet);
         experiment.setProfile(true);
+        long startTime = System.nanoTime();
         experiment.run();
-       
+        String mqCount = mqOracle.getStatisticalData().getSummary();
 
+        // calculate Runtime in ms
+        long endTime = System.nanoTime();
+        long runtimeMillis = (endTime - startTime) / 1_000_000;
+        System.out.println("Runtime: " + runtimeMillis + " ms");
 
         // Print Result
         DFA<?, Character> hypothesis = experiment.getFinalHypothesis();
@@ -109,10 +114,10 @@ public class main2 {
         double acc = Evaluator.evaluateAccuracy(
                 hypothesis,
                 testSet,
-                "TTT", //
+                "TTT", 
                 (int) experiment.getRounds().getCount(),
-                
-                
+                mqCount,
+                runtimeMillis,                    
              // save file
                 "results.csv"
         );
