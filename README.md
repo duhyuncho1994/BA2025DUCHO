@@ -13,6 +13,20 @@ This project investigates how active learning algorithms perform in a passive le
 
 ---
 
+## Implemented Features
+
+- **Active Learners** : Learning Algorithms
+  - Classic L* (Angluin, 1987)
+  - TTT Algorithm
+
+- **Dataset Loading**
+   - Abbadingo ```.gz``` format parser
+   - Randomly generated DFAs
+ 
+- **Equivalence Oracle**
+   - Example-based teacher using dataset
+      - Strategy: always yes / always no / random / nearest neighbor, etc.
+
 
 ## What Is Implemented & Where?
 
@@ -96,3 +110,17 @@ Membership Queries (MQs) answered using different strategies when the word is no
 |Train1.gz| L*        | Nearest Neigh. | 790000  | 40  | 95%           | 1874          |
 |Train1.gz| TTT       | Nearest Neigh. | 790000  | 776 | 100%          | 2018          |
 ---
+
+## Research Context
+
+```“How can we apply active learning in a passive dataset setting using only incomplete samples?”```
+
+- How inaccurate default answers impact learning
+- When and why EQs grow large
+- Which alternative strategies and Performance comparison
+
+---
+
+
+
+
