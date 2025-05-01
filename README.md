@@ -8,7 +8,7 @@ This project investigates how active learning algorithms perform in a passive le
 ## Overview
 
 - **Goal**: Use active learning algorithms (e.g., L*, TTT) on static datasets like Abbadingo
-- **GGGG** : 
+- **Setting**: Teacher answers based on the sample(Abbadingo) only, with fallback strategies for unknown queries
 - **Evaluation**: Measure accuracy, MQ/EQ counts, runtime under various strategies
 
 ---
@@ -76,7 +76,7 @@ Ensure you’ve placed the correct datasets in the ```/data/``` folder:
 
 The following factors are compared depending on the strategy (e.g., Always No, Nearest Neighbor) used:
 
-- **Dataset used ( e.g., train1.gz with test1.gz)**
+- **Dataset used (e.g., train1.gz with test1.gz)**
 - **Algorithm used (e.g., L star, TTT)**
 - **MQ (Membership Query) count**
 - **EQ (Equivalence Query) count (rounds)**
@@ -96,10 +96,10 @@ The following factors are compared depending on the strategy (e.g., Always No, N
 
 Membership Queries (MQs) answered using different strategies when the word is not in the sample:
 
--  Always Yes
--  Always No
--  Random
--  Nearest Neighbor ((Hamming / Edit Distance)
+-  **Always Yes** : Always return true for words that are not in the sample
+-  **Always No** : Always return false for words not in the sample
+-  **Random** : Returns one of true/false randomly
+-  **Nearest Neighbor** : Use the label of the most similar word among the samples
 ---
 ## Evaluation Output
 
@@ -115,9 +115,9 @@ Membership Queries (MQs) answered using different strategies when the word is no
 
 ```“How can we apply active learning in a passive dataset setting using only incomplete samples?”```
 
-- How inaccurate default answers impact learning
+- How inaccurate default answers impact learning (e.g., increase EQ count)
 - When and why EQs grow large
-- Which alternative strategies and Performance comparison
+- Which alternative strategies and Performance comparison(Which one performs best in accuracy/EQs)
 
 ---
 
