@@ -32,6 +32,7 @@ This project investigates how active learning algorithms perform when only a sta
 1. **Install Prerequisites**:
    - Java 17+
    - [Maven](https://maven.apache.org/)
+   - Learnlib
    
 
 2. **Build the project**:
@@ -64,11 +65,22 @@ The following factors are compared depending on the strategy (e.g., Always No, N
 - **Accuracy on test set**
 - **Runtime(ms)**
 
+### Evaluation Metrics
+
+| Metric | Description |
+| ----------- | ----------- |
+| MQcount | Algorithm |
+| EQcount | Algorithm |
+| Accuracy | % correct on test set |
+| Runtime | Time taken to learn (ms) |
+
+
+
 ## Evaluation Output
 
-| Dataset | Algorithm | Strategy       | MQs     | EQs | Accuracy | States | Runtime (ms) |
-|-----------|-----------|----------------|---------|-----|----------|--------|---------------|
-|Train1.gz  | L*        | Always No      | 800000  | 66  | 100%     | 2082   | 2143          |
-|Train1.gz  | L*        | Always Yes     | 800000  | 82  | 0%       | 1663   | 2121          |
-|Train1.gz| L*        | Nearest Neigh. | 790000  | 40  | 95%      | 88     | 1874          |
-|Train1.gz| TTT       | Nearest Neigh. | 790000  | 776 | 100%     | 63     | 2018          |
+| Dataset | Algorithm | Strategy       | MQs     | EQs | Accuracy  | Runtime (ms) |
+|-----------|-----------|----------------|---------|-----|----------|---------------|
+|Train1.gz  | L*        | Always No      | 800000  | 66  | 100%        | 2143          |
+|Train1.gz  | L*        | Always Yes     | 800000  | 82  | 0%          | 2121          |
+|Train1.gz| L*        | Nearest Neigh. | 790000  | 40  | 95%           | 1874          |
+|Train1.gz| TTT       | Nearest Neigh. | 790000  | 776 | 100%          | 2018          |
