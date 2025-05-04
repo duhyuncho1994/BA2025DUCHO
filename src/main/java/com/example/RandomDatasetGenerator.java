@@ -15,7 +15,7 @@ public class RandomDatasetGenerator {
                                                          long seed) {
 
         Map<List<Character>, Boolean> dataset = new LinkedHashMap<>();
-        Random random = new Random(seed);
+        Random random = new Random();
 
         for (int i = 0; i < numSamples; i++) {
             int length = random.nextInt(maxLength + 1);
