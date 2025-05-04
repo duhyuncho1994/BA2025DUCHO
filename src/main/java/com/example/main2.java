@@ -42,8 +42,8 @@ public class main2 {
 
         //When experiment for Random dataset,
         
-        //Map<List<Character>, Boolean> dataset = RandomDatasetGenerator.generate(targetDFA, alphabet, 1000, 12, 42L); //Random dataset
-        //Map<List<Character>, Boolean> testSet = RandomDatasetGenerator.generate(targetDFA, alphabet, 200, 8, 99L); // Random testset
+        // Map<List<Character>, Boolean> dataset = RandomDatasetGenerator.generate(targetDFA, alphabet, 10000,7, 15); //Random dataset
+        // Map<List<Character>, Boolean> testSet = RandomDatasetGenerator.generate(targetDFA, alphabet, 3000, 7, 15); // Random testset
 
 
         // This is just a code to check how gz files are parsed 
