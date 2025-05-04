@@ -11,14 +11,14 @@ public class RandomDatasetGenerator {
     public static Map<List<Character>, Boolean> generate(DFA<?, Character> targetDFA,
                                                          Alphabet<Character> alphabet,
                                                          int numSamples,
-                                                         int maxLength,
-                                                         long seed) {
+                                                         int minLength,
+                                                         int maxLength) {
 
         Map<List<Character>, Boolean> dataset = new LinkedHashMap<>();
         Random random = new Random();
 
         for (int i = 0; i < numSamples; i++) {
-            int length = random.nextInt(maxLength + 1);
+            int length = random.nextInt((maxLength - minLength) + 1) + minLength;
             List<Character> input = new ArrayList<>();
             for (int j = 0; j < length; j++) {
                 input.add(alphabet.getSymbol(random.nextInt(alphabet.size())));
