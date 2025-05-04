@@ -35,10 +35,15 @@ public class main2 {
         Alphabet<Character> alphabet = targetDFA.getInputAlphabet();
        
         // DatasetLoad
+
+        //When experiment for Abbadingo dataset,
+        Map<List<Character>, Boolean> dataset = DatasetLoader.load("data/train.1.gz"); // Abbadingo Dataset
+        Map<List<Character>, Boolean> testSet = DatasetLoader.load("data/test.1.gz"); //  Abbadingo testset
+
+        //When experiment for Random dataset,
         
-        Map<List<Character>, Boolean> dataset = DatasetLoader.load("data/train.2.gz"); // Abbadingo Dataset
-        //Map<List<Character>, Boolean> dataset = RandomDatasetGenerator.generate(targetDFA, alphabet, 100, 6, 42L); //Random dataset
-        Map<List<Character>, Boolean> testSet = DatasetLoader.load("data/test.2.gz"); //  Abbadingo testset
+        //Map<List<Character>, Boolean> dataset = RandomDatasetGenerator.generate(targetDFA, alphabet, 1000, 12, 42L); //Random dataset
+        //Map<List<Character>, Boolean> testSet = RandomDatasetGenerator.generate(targetDFA, alphabet, 200, 8, 99L); // Random testset
 
 
         // This is just a code to check how gz files are parsed 
