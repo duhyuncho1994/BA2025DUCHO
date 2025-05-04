@@ -25,6 +25,7 @@ public class Algorithms {
         return new TTTLearnerDFABuilder<Character>()
                 .withAlphabet(alphabet)
                 .withOracle(oracle)
+                .withAnalyzer(AcexAnalyzers.LINEAR_FWD)
                 .create();
     }
 
