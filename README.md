@@ -25,7 +25,7 @@ This project investigates how active learning algorithms perform in a passive le
  
 - **Equivalence Oracle**
    - Example-based teacher using dataset
-      - Strategy: always yes / always no / random / nearest neighbor
+      - Strategy: always yes / always no / nearest neighbor
 
 
 ## What Is Implemented & Where?
@@ -102,17 +102,18 @@ Membership Queries (MQs) answered using different strategies when the word is no
 
 -  **Always Yes** : Always return true for words that are not in the sample
 -  **Always No** : Always return false for words not in the sample
--  **Random** : Returns one of true/false randomly
 -  **Nearest Neighbor** : Use the label of the most similar word among the samples
 ---
 ## Evaluation Output
 
 | Dataset | Algorithm | Strategy       | MQs     | EQs | accepted  | rejected | Acceptance Rate |
 |-----------|-----------|----------------|---------|-----|----------|---------------| ---------------|
-|Train1.gz  | L*        | Always No      | 800000  | 66  | 100%        | 2143          | |
-|Train1.gz  | L*        | Always Yes     | 800000  | 82  | 0%          | 2121          | |
-|Train1.gz  | L*        | Nearest Neigh.     | 194501  | 42  | 1074          | 726          | 59,67% |
-|Train1.gz| TTT       | Nearest Neigh. | 790000  | 776 | 100%          | 2018          | |
+|Train1.gz  | L*        | Always No      | 809260  | 66  | 0        | 1800          | 0% |
+|Train1.gz  | L*        | Always Yes     |  844569  | 82    | 1800      |  0            | 0%    |
+|Train1.gz  | L*        | Nearest Neigh. | 194501  | 42  | 1074      | 726          | 59,67% |
+|Train1.gz| TTT       | Always No       | 236548  | 818   | 2        | 1798          | 0,11% |
+|Train1.gz| TTT       | Always Yes     |  239894   | 645   |   1796      | 4              |  99,78%       |
+|Train1.gz| TTT       | Nearest Neigh. | 48042  | 745 | 1072          | 728          | 59,56% |
 ---
 
 ## Research Context
