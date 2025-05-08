@@ -25,7 +25,7 @@ This project investigates how active learning algorithms perform in a passive le
  
 - **Equivalence Oracle**
    - Example-based teacher using dataset
-      - Strategy: always yes / always no / random / nearest neighbor, etc.
+      - Strategy: always yes / always no / random / nearest neighbor
 
 
 ## What Is Implemented & Where?
@@ -33,14 +33,14 @@ This project investigates how active learning algorithms perform in a passive le
 | File/Class                 | Description                                                  |
 |----------------------------|--------------------------------------------------------------|
 | `Main.java`                | Runs experiments with different strategies.                  |
-| `ExampleBasedTeacher.java` | Custom teacher that simulates passive dataset.               |
+| `ExampleBasedTeacher.java` | Custom teacher that simulates fixed dataset.               |
 | `DatasetLoader.java`       | Loads Abbadingo-style `.gz` datasets.                        |
 | `RandomDatasetGenerator.java` | Generates random data.                                    |
-| `Evaluator.java`           | Calculates accuracy, logs results to CSV.                    |
+| `Evaluator.java`           | Calculates MQcount, EQcount, Acceptance rate, etc.
 | `Algorithms.java`          | Factory for L* and TTT algorithms(Active Learners).          |
 | `data/train.1.gz`          | Training sample (from Abbadingo)                             |
 | `data/test.1.gz`           | Test sample (from Abbadingo)                                 |
-| `results.csv`              | Automatically written results of experiments.                |
+
 
 ---
 
@@ -80,7 +80,9 @@ The following factors are compared depending on the strategy (e.g., Always No, N
 - **Algorithm used (e.g., L star, TTT)**
 - **MQ (Membership Query) count**
 - **EQ (Equivalence Query) count (rounds)**
-- **Accuracy on test set**
+- **Accepted count**
+- **Rejected count**
+- **Acceptance rate**
 - **Runtime(ms)**
 ---
 ### Evaluation Criteria
@@ -89,7 +91,9 @@ The following factors are compared depending on the strategy (e.g., Always No, N
 | ----------- | ----------- |
 | MQcount | Total number of membership queries |
 | EQcount | Counterexamples found, the number of Rounds |
-| Accuracy | % correct on test set |
+| Accepted | How many samples accepted from total |
+| Rejected | How many samples rejected from total |
+| Acceptance Rate | % accepted samples on total samples |
 | Runtime | Time taken to learn (ms) |
 ---
 ## Experiment Strategies
@@ -103,12 +107,12 @@ Membership Queries (MQs) answered using different strategies when the word is no
 ---
 ## Evaluation Output
 
-| Dataset | Algorithm | Strategy       | MQs     | EQs | Accuracy  | Runtime (ms) |
-|-----------|-----------|----------------|---------|-----|----------|---------------|
-|Train1.gz  | L*        | Always No      | 800000  | 66  | 100%        | 2143          |
-|Train1.gz  | L*        | Always Yes     | 800000  | 82  | 0%          | 2121          |
-|Train1.gz| L*        | Nearest Neigh. | 790000  | 40  | 95%           | 1874          |
-|Train1.gz| TTT       | Nearest Neigh. | 790000  | 776 | 100%          | 2018          |
+| Dataset | Algorithm | Strategy       | MQs     | EQs | accepted  | rejected | Acceptance Rate |
+|-----------|-----------|----------------|---------|-----|----------|---------------| ---------------|
+|Train1.gz  | L*        | Always No      | 800000  | 66  | 100%        | 2143          | |
+|Train1.gz  | L*        | Always Yes     | 800000  | 82  | 0%          | 2121          | |
+|Train1.gz  | L*        | Nearest Neigh.     | 194501  | 42  | 1074          | 726          | 59,67% |
+|Train1.gz| TTT       | Nearest Neigh. | 790000  | 776 | 100%          | 2018          | |
 ---
 
 ## Research Context
@@ -117,7 +121,7 @@ Membership Queries (MQs) answered using different strategies when the word is no
 
 - How inaccurate default answers impact learning (e.g., increase EQ count)
 - When and why EQs grow large
-- Which alternative strategies and Performance comparison(Which one performs best in accuracy/EQs)
+- Which alternative strategies and Performance comparison(Which one performs best)
 
 ---
 
