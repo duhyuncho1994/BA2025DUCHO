@@ -27,10 +27,10 @@ public class ExampleBasedTeacher implements DFAMembershipOracle<Character>, DFAE
             if (sample.containsKey(input)) {
                 q.answer(sample.get(input));
             } else {
-                // Nearest neighbor 기반 답변
+                // Nearest neighbor strategy
                 boolean inferredAnswer = findNearestNeighborAnswer(input);
                 q.answer(inferredAnswer);
-                System.out.println("🔎 [MQ] Unseen input → inferred answer: " + inferredAnswer + " → " + input);
+                System.out.println("[MQ] Unseen input → inferred answer: " + inferredAnswer + " → " + input);
             }
         }
     }
@@ -49,7 +49,7 @@ public class ExampleBasedTeacher implements DFAMembershipOracle<Character>, DFAE
             }
         }
 
-        // 만약 아무것도 매칭 안되면 default로 false
+        // if nothing matched -> default : false
         return (bestAnswer != null) ? bestAnswer : false;
     }
 

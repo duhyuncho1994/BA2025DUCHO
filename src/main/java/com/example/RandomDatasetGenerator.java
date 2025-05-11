@@ -8,17 +8,22 @@ import java.util.*;
 
 public class RandomDatasetGenerator {
 
+
+    /**
+     * For dataset when random dataset generated 
+     */
+
     public static Map<List<Character>, Boolean> generate(DFA<?, Character> targetDFA,
                                                          Alphabet<Character> alphabet,
                                                          int numSamples,
-                                                         int maxLength,
-                                                         long seed) {
+                                                         int minLength,
+                                                         int maxLength) {
 
         Map<List<Character>, Boolean> dataset = new LinkedHashMap<>();
-        Random random = new Random(seed);
+        Random random = new Random();
 
         for (int i = 0; i < numSamples; i++) {
-            int length = random.nextInt(maxLength + 1);
+            int length = random.nextInt((maxLength - minLength) + 1) + minLength;
             List<Character> input = new ArrayList<>();
             for (int j = 0; j < length; j++) {
                 input.add(alphabet.getSymbol(random.nextInt(alphabet.size())));
@@ -31,5 +36,28 @@ public class RandomDatasetGenerator {
         }
 
         return dataset;
+    }
+
+    /**
+     * For testset when random dataset generated 
+     */
+    public static List<List<Character>> generateInputs(Alphabet<Character> alphabet,
+                                                       int numSamples,
+                                                       int minLength,
+                                                       int maxLength) {
+
+        List<List<Character>> inputList = new ArrayList<>();
+        Random random = new Random();
+
+        for (int i = 0; i < numSamples; i++) {
+            int length = random.nextInt((maxLength - minLength) + 1) + minLength;
+            List<Character> input = new ArrayList<>();
+            for (int j = 0; j < length; j++) {
+                input.add(alphabet.getSymbol(random.nextInt(alphabet.size())));
+            }
+            inputList.add(input);
+        }
+
+        return inputList;
     }
 }

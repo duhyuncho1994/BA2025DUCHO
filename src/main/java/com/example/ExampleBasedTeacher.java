@@ -24,47 +24,14 @@ public class ExampleBasedTeacher implements DFAMembershipOracle<Character>, DFAE
         for (Query<Character, Boolean> q : queries) {
             List<Character> input = new ArrayList<>(q.getInput().asList());
 
+            // 샘플에 있으면 해당 라벨 반환, 없으면 always false (reject)
             if (sample.containsKey(input)) {
                 q.answer(sample.get(input));
             } else {
-                // Nearest neighbor 기반 답변
-                boolean inferredAnswer = findNearestNeighborAnswer(input);
-                q.answer(inferredAnswer);
-                System.out.println("🔎 [MQ] Unseen input → inferred answer: " + inferredAnswer + " → " + input);
+                q.answer(false); // Always NO 전략
+                System.out.println("⚠️ [MQ] Unseen input → default answer: false → " + input);
             }
         }
-    }
-
-    private boolean findNearestNeighborAnswer(List<Character> input) {
-        int bestMatchLength = -1;
-        Boolean bestAnswer = null;
-
-        for (Map.Entry<List<Character>, Boolean> entry : sample.entrySet()) {
-            List<Character> sampleInput = entry.getKey();
-            int matchLength = commonPrefixLength(input, sampleInput);
-
-            if (matchLength > bestMatchLength) {
-                bestMatchLength = matchLength;
-                bestAnswer = entry.getValue();
-            }
-        }
-
-        // 만약 아무것도 매칭 안되면 default로 false
-        return (bestAnswer != null) ? bestAnswer : false;
-    }
-
-    private int commonPrefixLength(List<Character> a, List<Character> b) {
-        int len = Math.min(a.size(), b.size());
-        int count = 0;
-
-        for (int i = 0; i < len; i++) {
-            if (a.get(i).equals(b.get(i))) {
-                count++;
-            } else {
-                break;
-            }
-        }
-        return count;
     }
 
     @Override

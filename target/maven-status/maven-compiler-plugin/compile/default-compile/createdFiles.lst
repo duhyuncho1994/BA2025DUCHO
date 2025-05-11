@@ -1,0 +1,10 @@
+com\example\SampleBasedTeacher.class
+com\example\RandomDatasetGenerator.class
+com\example\Evaluator.class
+com\example\Main.class
+com\example\ExampleBasedTeacher.class
+com\example\Algorithms.class
+com\example\InteractionLogger.class
+com\example\LoggingDFAMembershipOracle.class
+com\example\TestsetLoader.class
+com\example\DatasetLoader.class
