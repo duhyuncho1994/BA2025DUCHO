@@ -63,12 +63,12 @@ mvn clean install
 
 1. On Unix/Linux/macOS:
 ```bash
-java -cp "target/learnlib-demo-1.0-SNAPSHOT.jar:target/dependency/*" com.example.Main
+java -cp "target/learnlib-demo-1.0-SNAPSHOT.jar:target/dependency/*" com.example.main2
 ```
 
 2. Windows
 ```bash
-java -cp "target/learnlib-demo-1.0-SNAPSHOT.jar;target/dependency/*" com.example.Main
+java -cp "target/learnlib-demo-1.0-SNAPSHOT.jar;target/dependency/*" com.example.main2
 ```
 
 If this does not work, try this 
