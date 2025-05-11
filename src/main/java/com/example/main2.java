@@ -14,7 +14,7 @@ import net.automatalib.automaton.fsa.impl.CompactDFA;
 import net.automatalib.util.automaton.builder.AutomatonBuilders;
 import java.util.*;
 
-public class main2 {
+public class Main {
 
     private static CompactDFA<Character> constructSUL() {
         Alphabet<Character> sigma = Alphabets.characters('0', '1');
