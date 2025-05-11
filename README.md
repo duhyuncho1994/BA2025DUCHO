@@ -75,12 +75,12 @@ mvn dependency:copy-dependencies
 ### 3. Run Main Class
 #### On Unix/Linux/macOS:
 ```bash
-java -cp "target/learnlib-demo-1.0-SNAPSHOT.jar:target/dependency/*" com.example.main2
+java -cp "target/learnlib-demo-1.0-SNAPSHOT.jar:target/dependency/*" com.example.Main
 ```
 
 #### On Windows
 ```bash
-java -cp "target/learnlib-demo-1.0-SNAPSHOT.jar;target/dependency/*" com.example.main2
+java -cp "target/learnlib-demo-1.0-SNAPSHOT.jar;target/dependency/*" com.example.Main
 ```
 
 Or directly from your IDE (e.g., IntelliJ or VSCode).
