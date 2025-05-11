@@ -4,11 +4,11 @@ import de.learnlib.oracle.EquivalenceOracle.DFAEquivalenceOracle;
 import de.learnlib.query.DefaultQuery;
 import de.learnlib.query.Query;
 import de.learnlib.oracle.MembershipOracle.DFAMembershipOracle;
-
 import net.automatalib.automaton.fsa.DFA;
 import net.automatalib.word.Word;
-
 import java.util.*;
+
+
 
 public class ExampleBasedTeacher implements DFAMembershipOracle<Character>, DFAEquivalenceOracle<Character> {
 
@@ -24,25 +24,17 @@ public class ExampleBasedTeacher implements DFAMembershipOracle<Character>, DFAE
         for (Query<Character, Boolean> q : queries) {
             List<Character> input = new ArrayList<>(q.getInput().asList());
 
-            // 샘플에 있으면 해당 라벨 반환, 없으면 always false (reject)
             if (sample.containsKey(input)) {
                 q.answer(sample.get(input));
             } else {
-<<<<<<< HEAD
-                q.answer(false); // Always NO 전략
-                System.out.println("⚠️ [MQ] Unseen input → default answer: false → " + input);
-=======
                 // Nearest neighbor strategy
                 boolean inferredAnswer = findNearestNeighborAnswer(input);
                 q.answer(inferredAnswer);
                 System.out.println("[MQ] Unseen input → inferred answer: " + inferredAnswer + " → " + input);
->>>>>>> dbe9d0f8e4c0991eac594ac8c53eb26ed1e5262a
             }
         }
     }
 
-<<<<<<< HEAD
-=======
     private boolean findNearestNeighborAnswer(List<Character> input) {
         int bestMatchLength = -1;
         Boolean bestAnswer = null;
@@ -75,7 +67,6 @@ public class ExampleBasedTeacher implements DFAMembershipOracle<Character>, DFAE
         return count;
     }
 
->>>>>>> dbe9d0f8e4c0991eac594ac8c53eb26ed1e5262a
     @Override
     public DefaultQuery<Character, Boolean> findCounterExample(DFA<?, Character> hypothesis, Collection<? extends Character> inputs) {
         for (Map.Entry<List<Character>, Boolean> entry : sample.entrySet()) {

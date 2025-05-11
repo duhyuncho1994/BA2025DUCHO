@@ -37,7 +37,6 @@ public class RandomDatasetGenerator {
 
         return dataset;
     }
-<<<<<<< HEAD
 
     /**
      * For testset when random dataset generated 
@@ -62,6 +61,6 @@ public class RandomDatasetGenerator {
         return inputList;
     }
 }
-=======
-}
->>>>>>> dbe9d0f8e4c0991eac594ac8c53eb26ed1e5262a
+
+
+
