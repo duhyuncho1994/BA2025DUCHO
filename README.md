@@ -72,9 +72,9 @@ java -cp "target/learnlib-demo-1.0-SNAPSHOT.jar;target/dependency/*" com.example
 ```
 
 If this does not work, try this 
-``bash
+```
 mvn dependency:copy-dependencies
-``
+```
 
 Or directly from your IDE (e.g., IntelliJ or VSCode).
 
