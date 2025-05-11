@@ -31,4 +31,9 @@ public class Algorithms {
                 .create();
     }
 
+<<<<<<< HEAD
 }
+=======
+
+}
+>>>>>>> dbe9d0f8e4c0991eac594ac8c53eb26ed1e5262a

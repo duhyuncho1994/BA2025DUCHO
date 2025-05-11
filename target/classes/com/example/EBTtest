@@ -1,0 +1,26 @@
+import de.learnlib.api.oracle.MembershipOracle.DFAMembershipOracle;
+import de.learnlib.api.oracle.MembershipOracle.Query;
+
+import java.util.Collection;
+import java.util.List;
+import java.util.Map;
+
+public class ExampleBasedTeacher implements DFAMembershipOracle<Character> {
+    private final Map<List<Character>, Boolean> sample;
+
+    public ExampleBasedTeacher(Map<List<Character>, Boolean> sample) {
+        this.sample = sample;
+    }
+
+    @Override
+    public void processQueries(Collection<? extends Query<Character, Boolean>> queries) {
+        for (Query<Character, Boolean> query : queries) {
+            List<Character> input = query.getInput().asList();
+            Boolean answer = sample.get(input);
+            if (answer == null) {
+                throw new IllegalStateException("No answer in sample for: " + input);
+            }
+            query.answer(answer);
+        }
+    }
+}

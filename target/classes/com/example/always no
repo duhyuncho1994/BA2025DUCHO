@@ -1,15 +1,3 @@
-package com.example;
-
-import de.learnlib.oracle.EquivalenceOracle.DFAEquivalenceOracle;
-import de.learnlib.query.DefaultQuery;
-import de.learnlib.query.Query;
-import de.learnlib.oracle.MembershipOracle.DFAMembershipOracle;
-
-import net.automatalib.automaton.fsa.DFA;
-import net.automatalib.word.Word;
-
-import java.util.*;
-
 public class ExampleBasedTeacher implements DFAMembershipOracle<Character>, DFAEquivalenceOracle<Character> {
 
     private final Map<List<Character>, Boolean> sample;
@@ -24,12 +12,12 @@ public class ExampleBasedTeacher implements DFAMembershipOracle<Character>, DFAE
         for (Query<Character, Boolean> q : queries) {
             List<Character> input = new ArrayList<>(q.getInput().asList());
 
-            //If  in sample -> return that label, if not -> always false (reject)
+            // 샘플에 있으면 해당 라벨 반환, 없으면 always false (reject)
             if (sample.containsKey(input)) {
                 q.answer(sample.get(input));
             } else {
-                q.answer(false); // case : Always NO 
-                System.out.println("[MQ] Unseen input → default answer: false → " + input);
+                q.answer(false); // Always NO 전략
+                System.out.println("⚠️ [MQ] Unseen input → default answer: false → " + input);
             }
         }
     }
