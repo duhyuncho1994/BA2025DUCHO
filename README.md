@@ -61,7 +61,7 @@ mvn clean install
 
 ## How to run Experiments
 ```bash
-java -cp target/your-jar-name.jar com.example.Main
+java -cp "target/learnlib-demo-1.0-SNAPSHOT.jar;target/dependency/*" com.example.Main
 ```
 
 Or directly from your IDE (e.g., IntelliJ or VSCode).
