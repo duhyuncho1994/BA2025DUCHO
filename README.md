@@ -60,9 +60,17 @@ mvn clean install
 ---
 
 ## How to run Experiments
-```bash
+
+
+```bash on Unix/Linux/macOS
+java -cp "target/learnlib-demo-1.0-SNAPSHOT.jar:target/dependency/*" com.example.Main
+```
+
+```bash on Windows
 java -cp "target/learnlib-demo-1.0-SNAPSHOT.jar;target/dependency/*" com.example.Main
 ```
+
+If this does not work, try this **mvn dependency:copy-dependencies**.
 
 Or directly from your IDE (e.g., IntelliJ or VSCode).
 
