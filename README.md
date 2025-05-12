@@ -128,7 +128,7 @@ Membership Queries (MQs) answered using different strategies when the word is no
 | Dataset | Algorithm | Strategy       | MQs     | EQs | accepted  | rejected | Acceptance Rate |
 |-----------|-----------|----------------|---------|-----|----------|---------------| ---------------|
 |Train1.gz  | L*        | Always No      | 809260  | 66  | 0        | 1800          | 0% |
-|Train1.gz  | L*        | Always Yes     |  844569  | 82    | 1800      |  0            | 0%    |
+|Train1.gz  | L*        | Always Yes     |  844569  | 82    | 1800      |  0            | 100%    |
 |Train1.gz  | L*        | Nearest Neigh. | 194501  | 42  | 1074      | 726          | 59,67% |
 |Train1.gz| TTT       | Always No       | 236548  | 818   | 2        | 1798          | 0,11% |
 |Train1.gz| TTT       | Always Yes     |  239894   | 645   |   1796      | 4              |  99,78%       |
