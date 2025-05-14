@@ -125,14 +125,17 @@ Membership Queries (MQs) answered using different strategies when the word is no
 ---
 ## Evaluation Output
 
-| Dataset | Algorithm | Strategy       | MQs     | EQs | accepted  | rejected | Acceptance Rate |
-|-----------|-----------|----------------|---------|-----|----------|---------------| ---------------|
-|Train1.gz  | L*        | Always No      | 809260  | 66  | 0        | 1800          | 0% |
-|Train1.gz  | L*        | Always Yes     |  844569  | 82    | 1800      |  0            | 100%    |
-|Train1.gz  | L*        | Nearest Neigh. | 194501  | 42  | 1074      | 726          | 59,67% |
-|Train1.gz| TTT       | Always No       | 236548  | 818   | 2        | 1798          | 0,11% |
-|Train1.gz| TTT       | Always Yes     |  239894   | 645   |   1796      | 4              |  99,78%       |
-|Train1.gz| TTT       | Nearest Neigh. | 48042  | 745 | 1072          | 728          | 59,56% |
+| Dataset | Algorithm | Strategy       | MQs     | EQs | Symbols | accepted  | rejected | Acceptance Rate | Runtime(ms) |
+|-----------|-----------|----------------|---------|-----|----------|----------|---------------| ---------------|  ---------------|
+|Train1.gz  | L*        | Always No      | 809260  | 66  | 0  | 0        | 1800          | 0% ||
+|Train1.gz  | L*        | Always Yes     |  844569  | 82 | 0  | 1800      |  0            | 100%    ||
+|Train1.gz  | L*        | Nearest Neigh. | 194501  | 42  | 0 | 1074      | 726          | 59,67% ||
+|Train1.gz| TTT       | Always No       | 236548  | 818  | 0 | 2        | 1798          | 0,11% ||
+|Train1.gz| TTT       | Always Yes     |  239894   | 645 | 0  |   1796      | 4              |  99,78%       ||
+|Train1.gz| TTT       | Nearest Neigh. | 48042  | 745    | 0 | 1072          | 728          | 59,56% ||
+|Train2.gz| L*        | Always No       |     |  |   |         |              |         ||
+|Train2.gz| L*        | Always Yes     |     |  |   |         |              |         ||
+|Train2.gz| L*        | Nearest Neigh. |  824775 | 77   | 14476820 |  849       |     951      | 47,17% |1422479 ms|
 ---
 
 ## Research Context
