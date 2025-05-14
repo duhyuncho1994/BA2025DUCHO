@@ -138,7 +138,7 @@ Membership Queries (MQs) answered using different strategies when the word is no
 |Train2.gz| L*        | Nearest Neigh. |  824775 | 77   | 14476820 |  849       |     951      | 47,17% |1422479 ms|
 |Train2.gz| TTT        | Always No       | 995186    |1964  | 17597194  | 2        |   1798          | 0,11%       |640471 ms|
 |Train2.gz| TTT       | Always Yes     | 835958    | 2147 | 14241109  |     1799    |       1       |  99,94%       |378187 ms|
-|Train2.gz| TTT       | Nearest Neigh. |     |  |   |         |             |        ||
+|Train2.gz| TTT       | Nearest Neigh. | 187636    | 2258 | 2875078  |   853      |   947          |   47,39%     |204782 ms|
 ---
 
 ## Research Context
