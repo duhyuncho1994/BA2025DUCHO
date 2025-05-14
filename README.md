@@ -134,7 +134,7 @@ Membership Queries (MQs) answered using different strategies when the word is no
 |Train1.gz| TTT       | Always Yes     |  239894   | 645 | 0  |   1796      | 4              |  99,78%       ||
 |Train1.gz| TTT       | Nearest Neigh. | 48042  | 745    | 0 | 1072          | 728          | 59,56% ||
 |Train2.gz| L*        | Always No       |  3824394   | 147 | 72415138  |    0     |    1000          |   0%      |6302108 ms|
-|Train2.gz| L*        | Always Yes     |     |  |   |         |              |         ||
+|Train2.gz| L*        | Always Yes     | 3251285    | 114 | 60173658  |     1800    |       0       |  100%       |1312275 ms|
 |Train2.gz| L*        | Nearest Neigh. |  824775 | 77   | 14476820 |  849       |     951      | 47,17% |1422479 ms|
 ---
 
