@@ -136,6 +136,9 @@ Membership Queries (MQs) answered using different strategies when the word is no
 |Train2.gz| L*        | Always No       |  3824394   | 147 | 72415138  |    0     |    1000          |   0%      |6302108 ms|
 |Train2.gz| L*        | Always Yes     | 3251285    | 114 | 60173658  |     1800    |       0       |  100%       |1312275 ms|
 |Train2.gz| L*        | Nearest Neigh. |  824775 | 77   | 14476820 |  849       |     951      | 47,17% |1422479 ms|
+|Train2.gz| TTT        | Always No       |     |  |   |         |             |        ||
+|Train2.gz| TTT       | Always Yes     | 835958    | 2147 | 14241109  |     1799    |       1       |  99,94%       |378187 ms|
+|Train2.gz| TTT       | Nearest Neigh. |     |  |   |         |             |        ||
 ---
 
 ## Research Context
