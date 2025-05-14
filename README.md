@@ -127,18 +127,18 @@ Membership Queries (MQs) answered using different strategies when the word is no
 
 | Dataset | Algorithm | Strategy       | MQs     | EQs | Symbols | accepted  | rejected | Acceptance Rate | Runtime(ms) |
 |-----------|-----------|----------------|---------|-----|----------|----------|---------------| ---------------|  ---------------|
-|Train1.gz  | L*        | Always No      | 809260  | 66  | 0  | 0        | 1800          | 0% ||
-|Train1.gz  | L*        | Always Yes     |  844569  | 82 | 0  | 1800      |  0            | 100%    ||
-|Train1.gz  | L*        | Nearest Neigh. | 194501  | 42  | 0 | 1074      | 726          | 59,67% ||
-|Train1.gz| TTT       | Always No       | 236548  | 818  | 0 | 2        | 1798          | 0,11% ||
-|Train1.gz| TTT       | Always Yes     |  239894   | 645 | 0  |   1796      | 4              |  99,78%       ||
-|Train1.gz| TTT       | Nearest Neigh. | 48042  | 745    | 0 | 1072          | 728          | 59,56% ||
-|Train2.gz| L*        | Always No       |  3824394   | 147 | 72415138  |    0     |    1000          |   0%      |6302108 ms|
-|Train2.gz| L*        | Always Yes     | 3251285    | 114 | 60173658  |     1800    |       0       |  100%       |1312275 ms|
-|Train2.gz| L*        | Nearest Neigh. |  824775 | 77   | 14476820 |  849       |     951      | 47,17% |1422479 ms|
-|Train2.gz| TTT        | Always No       | 995186    |1964  | 17597194  | 2        |   1798          | 0,11%       |640471 ms|
-|Train2.gz| TTT       | Always Yes     | 835958    | 2147 | 14241109  |     1799    |       1       |  99,94%       |378187 ms|
-|Train2.gz| TTT       | Nearest Neigh. | 187636    | 2258 | 2875078  |   853      |   947          |   47,39%     |204782 ms|
+|Train1.gz  | L*        | Always No      | 809,260  | 66  | 0  | 0        | 1800          | 0% ||
+|Train1.gz  | L*        | Always Yes     |  844,569  | 82 | 0  | 1800      |  0            | 100%    ||
+|Train1.gz  | L*        | Nearest Neigh. | 194,501  | 42  | 0 | 1074      | 726          | 59,67% ||
+|Train1.gz| TTT       | Always No       | 236,548  | 818  | 0 | 2        | 1798          | 0,11% ||
+|Train1.gz| TTT       | Always Yes     |  239,894   | 645 | 0  |   1796      | 4              |  99,78%       ||
+|Train1.gz| TTT       | Nearest Neigh. | 48,042  | 745    | 0 | 1,072          | 728          | 59,56% ||
+|Train2.gz| L*        | Always No       |  3,824,394   | 147 | 72,415,138  |    0     |    1000          |   0%      |6,302,108 ms|
+|Train2.gz| L*        | Always Yes     | 3,251,285    | 114 | 601,73,658  |     1800    |       0       |  100%       |1,312,275 ms|
+|Train2.gz| L*        | Nearest Neigh. |  824,775 | 77   | 14,476,820 |  849       |     951      | 47,17% |1422479 ms|
+|Train2.gz| TTT        | Always No       | 995,186    |1,964  | 175,97,194  | 2        |   1798          | 0,11%       |640,471 ms|
+|Train2.gz| TTT       | Always Yes     | 835,958    | 2,147 | 142,41,109  |     1799    |       1       |  99,94%       |378,187 ms|
+|Train2.gz| TTT       | Nearest Neigh. | 187,636    | 2,258 | 2,875,078  |   853      |   947          |   47,39%     |204,782 ms|
 ---
 
 ## Research Context
