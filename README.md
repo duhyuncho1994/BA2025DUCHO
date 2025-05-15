@@ -128,10 +128,10 @@ Membership Queries (MQs) answered using different strategies when the word is no
 | Dataset | Algorithm | Strategy       | MQs     | EQs | Symbols | accepted  | rejected | Acceptance Rate | Runtime(ms) |
 |-----------|-----------|----------------|---------|-----|----------|----------|---------------| ---------------|  ---------------|
 |Train1.gz  | L*        | Always No      | 809,260  | 66  | 0  | 0        | 1800          | 0% ||
-|Train1.gz  | L*        | Always Yes     |  844,569  | 82 | 0  | 1800      |  0            | 100%    ||
+|Train1.gz  | L*        | Always Yes     |  844,569  | 82 | 14,346,195  | 1800      |  0            | 100%    |315,615 ms|
 |Train1.gz  | L*        | Nearest Neigh. | 194,501  | 42  | 0 | 1074      | 726          | 59,67% ||
 |Train1.gz| TTT       | Always No       | 236,548  | 818  | 0 | 2        | 1798          | 0,11% ||
-|Train1.gz| TTT       | Always Yes     |  239,894   | 645 | 0  |   1796      | 4              |  99,78%       ||
+|Train1.gz| TTT       | Always Yes     |  239,894   | 645 | 3,803,916  |   1796      | 4              |  99,78%       |118,243 ms|
 |Train1.gz| TTT       | Nearest Neigh. | 48,042  | 745    | 0 | 1,072          | 728          | 59,56% ||
 |Train2.gz| L*        | Always No       |  3,824,394   | 147 | 72,415,138  |    0     |    1000          |   0%      |6,302,108 ms|
 |Train2.gz| L*        | Always Yes     | 3,251,285    | 114 | 60,173,658  |     1800    |       0       |  100%       |1,312,275 ms|
