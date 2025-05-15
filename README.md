@@ -171,6 +171,7 @@ Membership Queries (MQs) answered using different strategies when the word is no
 |Random| TTT       | Always No       | 31  |4  | 87  | 120        |  180        | 40,00% |95ms|
 |Random| TTT       | Always Yes     | 27  | 4 | 73  | 114        |   186       | 38,00% |155ms|
 |Random| TTT       | Nearest Neigh. |70   | 7 |280   |  123       |   177       | 41,00%  |104 ms|
+---
 
 ### Relatively complex random dataset. This could be similar with Abbadingo dataset.
 - Samples(Trainset) : Samples(Trainset) : 3000, Samples(Testset) : 1500, minLength : 7, maxLength : 15
@@ -182,7 +183,7 @@ Membership Queries (MQs) answered using different strategies when the word is no
 |Random| TTT       | Always No       | 50969  | 305 | 705195  |  160       |  1340        | 10,67% |24172ms|
 |Random| TTT       | Always Yes     | 85,373  | 534 | 1,200,138  |  1194       |     306     |79,60%  |45,463ms|
 |Random| TTT       | Nearest Neigh. | 21674  |411  |260506   | 489        | 1011         | 32,60% |9476ms|
-
+---
 
 
 ## Research Context
