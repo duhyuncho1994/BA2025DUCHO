@@ -180,12 +180,12 @@ Membership Queries (MQs) answered using different strategies when the word is no
   
 | Dataset | Algorithm | Strategy       | MQs     | EQs | Symbols | accepted  | rejected | Acceptance Rate | Runtime(ms) |
 |-----------|-----------|----------------|---------|-----|----------|----------|---------------| ---------------|  ---------------|
-|Random  | L*        | Always No      | 313110  |68  |4931758   |  152       |   134       | 10,13% |91228ms|
-|Random  | L*        | Always Yes     |  383537  |68  |5931030   | 1195        |    305      | 79,67% |330138ms|
-|Random  | L*        | Nearest Neigh. | 61194  |24  |882025   |  522       |  978        |  34,80%|31340ms|
-|Random| TTT       | Always No       | 50969  | 305 | 705195  |  160       |  1340        | 10,67% |24172ms|
+|Random  | L*        | Always No      | 313,110  |68  |4,931,758   |  152       |   1340       | 10,13% |91,228ms|
+|Random  | L*        | Always Yes     |  383,537  |68  |5,931,030   | 1195        |    305      | 79,67% |330,138ms|
+|Random  | L*        | Nearest Neigh. | 61,194  |24  |882,025   |  522       |  978        |  34,80%|31,340ms|
+|Random| TTT       | Always No       | 50,969  | 305 | 705,195  |  160       |  1340        | 10,67% |24,172ms|
 |Random| TTT       | Always Yes     | 85,373  | 534 | 1,200,138  |  1194       |     306     |79,60%  |45,463ms|
-|Random| TTT       | Nearest Neigh. | 21674  |411  |260506   | 489        | 1011         | 32,60% |9476ms|
+|Random| TTT       | Nearest Neigh. | 21,674  |411  |260,506   | 489        | 1011         | 32,60% |9,476ms|
 ---
 
 
