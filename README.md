@@ -175,6 +175,8 @@ Membership Queries (MQs) answered using different strategies when the word is no
 |Random| TTT       | Nearest Neigh. |70   | 7 |280   |  123       |   177       | 41,00%  |104 ms|
 ---
 
+- By simply setting up the dataset, there is no significant difference in the number of MQs or EQs in the simple DFA regardless of which algorithm is applied.
+  
 ### Relatively complex random dataset. This could be similar with Abbadingo dataset.
 - Samples(Trainset) : Samples(Trainset) : 3000, Samples(Testset) : 1500, minLength : 7, maxLength : 15
   
@@ -188,6 +190,8 @@ Membership Queries (MQs) answered using different strategies when the word is no
 |Random| TTT       | Nearest Neigh. | 21,674  |411  |260,506   | 489        | 1011         | 32,60% |9,476ms|
 ---
 
+- As the dataset size increases, the TTT algorithm outperforms Lstar (in perspectives of significantly fewer MQs or fewer symbols used).
+- However, such this result shows that the number of EQs has to increase significantly in return.
 
 ## Research Context
 
