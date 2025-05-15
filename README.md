@@ -143,13 +143,13 @@ Membership Queries (MQs) answered using different strategies when the word is no
 
 ### Membership Query
 #### Lstar
-- Since MQ is performed for all R, E combinations, it requires relatively more MQ than TTT by updating the entire Observation table. MQ occurs as many times as the number of Rows x Cols.
+- Since MQ is performed for all R, E combinations(Performing extensive queries to fill observation table), it requires relatively more MQ than TTT by updating the entire Observation table. MQ occurs as many times as the number of Rows x Cols.
 #### TTT
 - On the other hand, the MQ number is relatively low for TTT because only the comparisons necessary to distinguish between states are performed based on the discriminator.
 
 ### Equivalence Query
 #### Lstar
-- After constructing the hypothesis DFA, if a new state is added to R, a Counterexample is requested. Therefore, in most cases for Lstar, the number of EQs is equal to or lower than the number of states.
+- After constructing the hypothesis DFA, a counterexample is required only when the number of states increases due to the addition of a new state to R. Therefore, in the case of Lstar, in most cases, the number of EQs is less than or equal to the number of states.
 #### TTT
 - However, in case of TTT, especially in the case of DFA with complex structure, EQ is frequently performed for refinement whenever a discrimination failure occurs, because if a discrimination failure occurs, EQ is requested again and again to obtain a new Counterexample in order to find a discriminator between states.
 
@@ -161,15 +161,27 @@ Membership Queries (MQs) answered using different strategies when the word is no
 - However, in return, the EQ count is bound to explode.
 
 ## Evaluation Output (With Randomly generated Dataset)
-| Setup | Algorithm | Strategy       | MQs     | EQs | Symbols | accepted  | rejected | Acceptance Rate | Runtime(ms) |
+### Relatively simple random dataset.
+- Samples(Trainset) : 1000, Samples(Testset) : 300, minLength : 2, maxLength : 5
+| Dataset | Algorithm | Strategy       | MQs     | EQs | Symbols | accepted  | rejected | Acceptance Rate | Runtime(ms) |
 |-----------|-----------|----------------|---------|-----|----------|----------|---------------| ---------------|  ---------------|
-|Random  | L*        | Always No      |   |  |   |         |          |  ||
-|Random  | L*        | Always Yes     |   |  |   |         |          |  ||
-|Random  | L*        | Nearest Neigh. |   29193 |18  | 352591  |  110       |   190       | 36,67%  |14302 ms|
-|Random| TTT       | Always No       |   |  |   |         |          |  ||
-|Random| TTT       | Always Yes     |   |  |   |         |          |  ||
-|Random| TTT       | Nearest Neigh. |8907   | 192 |100294   |  111       |   189       | 37,00%  |4603 ms|
+|Random  | L*        | Always No      | 279  | 4 | 1602  |  122       |  178        | 40,67% |145ms|
+|Random  | L*        | Always Yes     | 231  |4  | 1358  |  134       |   166       | 44,67% |118ms|
+|Random  | L*        | Nearest Neigh. |   217 |4  | 1190  |  111       |   189       | 37,00%  |100 ms|
+|Random| TTT       | Always No       | 31  |4  | 87  | 120        |  180        | 40,00% |95ms|
+|Random| TTT       | Always Yes     | 27  | 4 | 73  | 114        |   186       | 38,00% |155ms|
+|Random| TTT       | Nearest Neigh. |70   | 7 |280   |  123       |   177       | 41,00%  |104 ms|
 
+### Relatively complex random dataset. This could be similar with Abbadingo dataset.
+- Samples(Trainset) : Samples(Trainset) : 3000, Samples(Testset) : 1500, minLength : 7, maxLength : 15
+| Dataset | Algorithm | Strategy       | MQs     | EQs | Symbols | accepted  | rejected | Acceptance Rate | Runtime(ms) |
+|-----------|-----------|----------------|---------|-----|----------|----------|---------------| ---------------|  ---------------|
+|Random  | L*        | Always No      | 313110  |68  |4931758   |  152       |   134       | 10,13% |91228ms|
+|Random  | L*        | Always Yes     |  383537  |68  |5931030   | 1195        |    305      | 79,67% |330138ms|
+|Random  | L*        | Nearest Neigh. | 61194  |24  |882025   |  522       |  978        |  34,80%|31340ms|
+|Random| TTT       | Always No       | 50969  | 305 | 705195  |  160       |  1340        | 10,67% |24172ms|
+|Random| TTT       | Always Yes     | 85,373  | 534 | 1,200,138  |  1194       |     306     |79,60%  |45,463ms|
+|Random| TTT       | Nearest Neigh. | 21674  |411  |260506   | 489        | 1011         | 32,60% |9476ms|
 
 
 
