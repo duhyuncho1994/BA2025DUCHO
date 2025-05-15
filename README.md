@@ -127,12 +127,12 @@ Membership Queries (MQs) answered using different strategies when the word is no
 
 | Dataset | Algorithm | Strategy       | MQs     | EQs | Symbols | accepted  | rejected | Acceptance Rate | Runtime(ms) |
 |-----------|-----------|----------------|---------|-----|----------|----------|---------------| ---------------|  ---------------|
-|Train1.gz  | L*        | Always No      | 809,260  | 66  | 13583428  | 0        | 1800          | 0% |244489 ms|
+|Train1.gz  | L*        | Always No      | 809,260  | 66  | 13,583,428  | 0        | 1800          | 0% |244,489 ms|
 |Train1.gz  | L*        | Always Yes     |  844,569  | 82 | 14,346,195  | 1800      |  0            | 100%    |315,615 ms|
 |Train1.gz  | L*        | Nearest Neigh. | 194,501  | 42  | 0 | 1074      | 726          | 59,67% ||
 |Train1.gz| TTT       | Always No       | 236,548  | 818  | 3,718,302 | 2        | 1798          | 0,11% |93,873 ms|
 |Train1.gz| TTT       | Always Yes     |  239,894   | 645 | 3,803,916  |   1796      | 4              |  99,78%       |118,243 ms|
-|Train1.gz| TTT       | Nearest Neigh. | 48,042  | 745    | 0 | 1,072          | 728          | 59,56% ||
+|Train1.gz| TTT       | Nearest Neigh. | 48,042  | 745    |641289 | 1,072          | 728          | 59,56% |23307 ms|
 |Train2.gz| L*        | Always No       |  3,824,394   | 147 | 72,415,138  |    0     |    1000          |   0%      |6,302,108 ms|
 |Train2.gz| L*        | Always Yes     | 3,251,285    | 114 | 60,173,658  |     1800    |       0       |  100%       |1,312,275 ms|
 |Train2.gz| L*        | Nearest Neigh. |  824,775 | 77   | 14,476,820 |  849       |     951      | 47,17% |1,422,479 ms|
@@ -141,6 +141,24 @@ Membership Queries (MQs) answered using different strategies when the word is no
 |Train2.gz| TTT       | Nearest Neigh. | 187,636    | 2,258 | 2,875,078  |   853      |   947          |   47,39%     |204,782 ms|
 ---
 
+### Membership Query
+#### Lstar
+- Since MQ is performed for all R, E combinations, it requires relatively more MQ than TTT by updating the entire Observation table. MQ occurs as many times as the number of Rows x Cols.
+#### TTT
+- On the other hand, the MQ number is relatively low for TTT because only the comparisons necessary to distinguish between states are performed based on the discriminator.
+
+### Equivalence Query
+#### Lstar
+- After constructing the hypothesis DFA, if a new state is added to R, a Counterexample is requested. Therefore, in most cases for Lstar, the number of EQs is equal to or lower than the number of states.
+#### TTT
+- However, in the case of TTT, EQ is frequently performed for refinement whenever a discrimination failure occurs, because if a discrimination failure occurs, EQ is requested again and again to obtain a new Counterexample in order to find a discriminator between states.
+
+### Runtime
+#### Lstar
+- Because of duplicate sequences (multiple rows with the same result), and because the Observation table is expanded by splitting the prefix and suffix, and because all row and column combinations are queried, memory usage is high, the number of MQs is relatively explosive. Therefore the runtime is generally long.
+#### TTT
+- TTT has the advantage of Redundancy-Free (only storing the minimum discriminators that can distinguish states), so it uses less memory, has a much lower number of MQs. Therefore faster.
+- However, in return, the EQ count is bound to explode.
 ## Research Context
 
 ```“How can we apply active learning in a passive dataset setting using only incomplete samples?”```
