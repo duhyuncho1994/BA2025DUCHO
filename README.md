@@ -123,7 +123,7 @@ Membership Queries (MQs) answered using different strategies when the word is no
 -  **Always No** : Always return false for words not in the sample
 -  **Nearest Neighbor** : Use the label of the most similar word among the samples
 ---
-## Evaluation Output
+## Evaluation Output (With Abbadingo Dataset)
 
 | Dataset | Algorithm | Strategy       | MQs     | EQs | Symbols | accepted  | rejected | Acceptance Rate | Runtime(ms) |
 |-----------|-----------|----------------|---------|-----|----------|----------|---------------| ---------------|  ---------------|
@@ -159,6 +159,20 @@ Membership Queries (MQs) answered using different strategies when the word is no
 #### TTT
 - TTT has the advantage of Redundancy-Free (only storing the minimum discriminators that can distinguish states), so it uses less memory, has a much lower number of MQs. Therefore faster.
 - However, in return, the EQ count is bound to explode.
+
+## Evaluation Output (With Randomly generated Dataset)
+| Setup | Algorithm | Strategy       | MQs     | EQs | Symbols | accepted  | rejected | Acceptance Rate | Runtime(ms) |
+|-----------|-----------|----------------|---------|-----|----------|----------|---------------| ---------------|  ---------------|
+|Random  | L*        | Always No      |   |  |   |         |          |  ||
+|Random  | L*        | Always Yes     |   |  |   |         |          |  ||
+|Random  | L*        | Nearest Neigh. |   29193 |18  | 352591  |  110       |   190       | 36,67%  |14302 ms|
+|Random| TTT       | Always No       |   |  |   |         |          |  ||
+|Random| TTT       | Always Yes     |   |  |   |         |          |  ||
+|Random| TTT       | Nearest Neigh. |8907   | 192 |100294   |  111       |   189       | 37,00%  |4603 ms|
+
+
+
+
 ## Research Context
 
 ```“How can we apply active learning in a passive dataset setting using only incomplete samples?”```
