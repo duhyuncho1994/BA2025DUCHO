@@ -164,6 +164,7 @@ Membership Queries (MQs) answered using different strategies when the word is no
 
 ### Relatively simple random dataset.
 - Samples(Trainset) : 1000, Samples(Testset) : 300, minLength : 2, maxLength : 5
+  
 | Dataset | Algorithm | Strategy       | MQs     | EQs | Symbols | accepted  | rejected | Acceptance Rate | Runtime(ms) |
 |-----------|-----------|----------------|---------|-----|----------|----------|---------------| ---------------|  ---------------|
 |Random    | L*        | Always No      | 279      | 4 | 1602    |  122         |  178          | 40,67%       |145ms              |
@@ -176,6 +177,7 @@ Membership Queries (MQs) answered using different strategies when the word is no
 
 ### Relatively complex random dataset. This could be similar with Abbadingo dataset.
 - Samples(Trainset) : Samples(Trainset) : 3000, Samples(Testset) : 1500, minLength : 7, maxLength : 15
+  
 | Dataset | Algorithm | Strategy       | MQs     | EQs | Symbols | accepted  | rejected | Acceptance Rate | Runtime(ms) |
 |-----------|-----------|----------------|---------|-----|----------|----------|---------------| ---------------|  ---------------|
 |Random  | L*        | Always No      | 313110  |68  |4931758   |  152       |   134       | 10,13% |91228ms|
