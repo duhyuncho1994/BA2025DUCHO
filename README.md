@@ -151,7 +151,7 @@ Membership Queries (MQs) answered using different strategies when the word is no
 #### Lstar
 - After constructing the hypothesis DFA, if a new state is added to R, a Counterexample is requested. Therefore, in most cases for Lstar, the number of EQs is equal to or lower than the number of states.
 #### TTT
-- However, in the case of TTT, EQ is frequently performed for refinement whenever a discrimination failure occurs, because if a discrimination failure occurs, EQ is requested again and again to obtain a new Counterexample in order to find a discriminator between states.
+- However, in case of TTT, especially in the case of DFA with complex structure, EQ is frequently performed for refinement whenever a discrimination failure occurs, because if a discrimination failure occurs, EQ is requested again and again to obtain a new Counterexample in order to find a discriminator between states.
 
 ### Runtime
 #### Lstar
