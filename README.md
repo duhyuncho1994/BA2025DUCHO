@@ -161,11 +161,12 @@ Membership Queries (MQs) answered using different strategies when the word is no
 - However, in return, the EQ count is bound to explode.
 
 ## Evaluation Output (With Randomly generated Dataset)
+
 ### Relatively simple random dataset.
 - Samples(Trainset) : 1000, Samples(Testset) : 300, minLength : 2, maxLength : 5
 | Dataset | Algorithm | Strategy       | MQs     | EQs | Symbols | accepted  | rejected | Acceptance Rate | Runtime(ms) |
 |-----------|-----------|----------------|---------|-----|----------|----------|---------------| ---------------|  ---------------|
-|Random  | L*        | Always No      | 279  | 4 | 1602  |  122       |  178        | 40,67% |145ms|
+|Random    | L*        | Always No      | 279      | 4 | 1602    |  122         |  178          | 40,67%       |145ms              |
 |Random  | L*        | Always Yes     | 231  |4  | 1358  |  134       |   166       | 44,67% |118ms|
 |Random  | L*        | Nearest Neigh. |   217 |4  | 1190  |  111       |   189       | 37,00%  |100 ms|
 |Random| TTT       | Always No       | 31  |4  | 87  | 120        |  180        | 40,00% |95ms|
