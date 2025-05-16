@@ -160,7 +160,7 @@ In both Lstar and TTT, Equivalence Query is a process of comparing the learned D
 
 So the EQ oracle must find counterexamples using a test dataset or heuristics(i.e. Nearest Neighbor Strategy). Since test dataset-based EQ is not complete, it is difficult to find all the actual state discriminations, and there may be a lack of counterexamples or uncertain situations.
 
-TTT tries to discriminate states very strictly by using counterexamples, the counterexample must be splitted into an access sequence and a discriminator to distinguish between states using the discriminator. For example, a state ```q_0``` is accepted by targetDFA using the discriminator, but state ```q_1``` is not accepted by the targetDFA using the discriminator.
+TTT tries to discriminate states very strictly by using counterexamples, the counterexample must be splitted into an access sequence and a discriminator to distinguish between states using the discriminator. For example, a state ```a``` is accepted by targetDFA using the discriminator, but state ```b``` is not accepted by the targetDFA using the discriminator.
 
 However, if there is no TargetDFA and the EQ oracle cannot provide a perfect counterexample repeatedly, TTT will keep requesting EQ multiple times to try to distinguish states.
 
