@@ -152,6 +152,23 @@ Membership Queries (MQs) answered using different strategies when the word is no
 - After constructing the hypothesis DFA, a counterexample is required only when the number of states increases due to the addition of a new state to R. Therefore, in the case of Lstar, in most cases, the number of EQs is less than or equal to the number of states.
 #### TTT
 - However, in case of TTT, especially in the case of DFA with complex structure, EQ is frequently performed for refinement whenever a discrimination failure occurs, because if a discrimination failure occurs, EQ is requested again and again to obtain a new Counterexample in order to find a discriminator between states.
+#### Limitation of using Abbadingo
+
+In particular, when using the Abbadingo dataset, the phenomenon of the number of EQ requests in TTT increasing significantly in an EQ oracle environment where there is no target DFA or where there is an incomplete target DFA is severe.
+
+In both Lstar and TTT, Equivalence Query is a process of comparing the learned DFA with the actual target DFA and returning a counterexample. However, target DFA is open in the Abbadingo dataset.
+
+So the EQ oracle must find counterexamples using a test dataset or heuristics(i.e. Nearest Neighbor Strategy). Since test dataset-based EQ is not complete, it is difficult to find all the actual state discriminations, and there may be a lack of counterexamples or uncertain situations.
+
+TTT tries to discriminate states very strictly by using counterexamples, the counterexample must be splitted into an access sequence and a discriminator to distinguish between states using the discriminator. For example, a state ```q_0``` is accepted by targetDFA using the discriminator, but state ```q_1``` is not accepted by the targetDFA using the discriminator.
+
+However, if there is no TargetDFA and the EQ oracle cannot provide a perfect counterexample repeatedly, TTT will keep requesting EQ multiple times to try to distinguish states.
+
+L* is less strict and has relatively less impact. L* finds a discriminator while splitting the counterexample, and this discriminator simply distinguishes targetDFA from current hypothesis DFA.
+
+It can operate less sensitively to the completeness of the EQ oracle.
+
+Therefore, even in situations like Abbadingo where there is no Target DFA, the number of EQs is relatively small in case of Lstar.
 
 ### Runtime
 #### Lstar
