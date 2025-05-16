@@ -170,14 +170,7 @@ It can operate less sensitively to the completeness of the EQ oracle.
 
 Therefore, even in situations like Abbadingo where there is no Target DFA, the number of EQs is relatively small in case of Lstar.
 
-### Runtime
-#### Lstar
-- Because of duplicate sequences (multiple rows with the same result), and because the Observation table is expanded by splitting the prefix and suffix, and because all row and column combinations are queried, memory usage is high, the number of MQs is relatively explosive. Therefore the runtime is generally long.
-#### TTT
-- TTT has the advantage of Redundancy-Free (only storing the minimum discriminators that can distinguish states), so it uses less memory, has a much lower number of MQs. Therefore faster.
-- However, in return, the EQ count is bound to explode.
-
-### Why TTT Can Trigger Many EQs on Complex DFAs
+#### Why TTT Can Trigger Many EQs on Complex DFAs
 
 Imagine a DFA with 100+ states, where each state only differs from others by reading a long unique sequence of 50+ symbols (e.g., "abababab...a"). In such a case:
 
@@ -186,7 +179,15 @@ Imagine a DFA with 100+ states, where each state only differs from others by rea
 
 As the number of states and the complexity of discriminators grow, **TTT performs many more EQs** because each insertion can restructure the tree and reverify the entire hypothesis.
 
-> 📌 On a complex DFA derived from the Abbadingo dataset, TTT required 10x more EQs than L\*, despite similar overall accuracy — purely due to the cost of maintaining and rebalancing the tree.
+> 📌 On a complex DFA derived from the Abbadingo dataset, TTT required average 10x more EQs than L\*, despite similar overall accuracy — purely due to the cost of maintaining and rebalancing the tree.
+
+
+### Runtime
+#### Lstar
+- Because of duplicate sequences (multiple rows with the same result), and because the Observation table is expanded by splitting the prefix and suffix, and because all row and column combinations are queried, memory usage is high, the number of MQs is relatively explosive. Therefore the runtime is generally long.
+#### TTT
+- TTT has the advantage of Redundancy-Free (only storing the minimum discriminators that can distinguish states), so it uses less memory, has a much lower number of MQs. Therefore faster.
+- However, in return, the EQ count is bound to explode.
 
 
 ## Evaluation Output (With Randomly generated Dataset)
