@@ -170,6 +170,16 @@ It can operate less sensitively to the completeness of the EQ oracle.
 
 Therefore, even in situations like Abbadingo where there is no Target DFA, the number of EQs is relatively small in case of Lstar.
 
+| Aspect                      | Standard TTT (with Target DFA)                                 | Abbadingo-style TTT (no Target DFA)                          |
+| --------------------------- | -------------------------------------------------------------- | ------------------------------------------------------------ |
+| **EQ Oracle**               | Uses a real equivalence oracle that compares with the true DFA | Simulated using a fixed test set or heuristic methods        |
+| **Counterexample Accuracy** | Always correct and minimal (from actual DFA)                   | May be incomplete or noisy (limited test data)               |
+| **State Splitting**         | Precise and reliable, based on exact behavior difference       | Potentially overfitting or underfitting due to missing cases |
+| **EQ Count**                | Typically grows linearly with the number of states             | Can grow much larger due to failed EQ approximations         |
+| **Learning Stability**      | Stable convergence as correct distinctions are made            | Can oscillate or over-refine due to spurious counterexamples |
+
+
+
 #### Why TTT Can Trigger Many EQs on Complex DFAs
 
 Imagine a DFA with 100+ states, where each state only differs from others by reading a long unique sequence of 50+ symbols (e.g., "abababab...a"). In such a case:
