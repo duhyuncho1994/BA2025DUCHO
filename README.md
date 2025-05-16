@@ -190,7 +190,7 @@ As the number of states and the complexity of discriminators grow, **TTT perform
 - By simply setting up the dataset, there is no significant difference in the number of MQs or EQs in the simple DFA regardless of which algorithm is applied.
   
 ### Relatively complex random dataset. This could be similar with Abbadingo dataset.
-- Samples(Trainset) : Samples(Trainset) : 3000, Samples(Testset) : 1500, minLength : 7, maxLength : 15
+- Samples(Trainset) : 3000, Samples(Testset) : 1500, minLength : 7, maxLength : 15
   
 | Dataset | Algorithm | Strategy       | MQs     | EQs | Symbols | accepted  | rejected | Acceptance Rate | Runtime(ms) |
 |-----------|-----------|----------------|---------|-----|----------|----------|---------------| ---------------|  ---------------|
