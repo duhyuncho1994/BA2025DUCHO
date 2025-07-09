@@ -1,4 +1,4 @@
-# Project: An experimental comparison of active learning algorithms on fixed data sets
+# An experimental comparison of active learning algorithms on fixed data sets
 
 This project investigates how active learning algorithms perform in a passive learning environment (when only a static fixed sample (passive dataset) is available). In this setting, the learner issues membership queries(MQs) and equivalence queries (EQs), which are answered by a passive teacher using pre-defined strategies. Various strategies are compared to handle unknown words during membership queries.
 
