@@ -1,6 +1,6 @@
 # Project: An experimental comparison of active learning algorithms on fixed data sets
 
-This project investigates how active learning algorithms perform in a passive learning environment (when only a static fixed sample (passive dataset) is available). In this setting, the learner issues membership and equivalence queries, which are answered by a passive teacher using pre-defined strategies. Various strategies are compared to handle unknown words during membership queries (MQs).
+This project investigates how active learning algorithms perform in a passive learning environment (when only a static fixed sample (passive dataset) is available). In this setting, the learner issues membership queries(MQs) and equivalence queries (EQs), which are answered by a passive teacher using pre-defined strategies. Various strategies are compared to handle unknown words during membership queries.
 
 ---
 
@@ -8,8 +8,8 @@ This project investigates how active learning algorithms perform in a passive le
 ## Overview
 
 - **Goal**: Use active learning algorithms (e.g., L*, TTT) on static datasets like Abbadingo
-- **Setting**: Teacher answers based on the sample(Abbadingo) only, with fallback strategies for unknown queries
-- **Evaluation**: Measure accuracy, MQ/EQ counts, runtime under various strategies
+- **Setting**: Teacher answers based on the sample(Abbadingo) or randomly generated samples only, with fallback strategies for unknown queries
+- **Evaluation**: Measure MQs/EQs count and the number of symbols under various strategies
 
 ---
 
