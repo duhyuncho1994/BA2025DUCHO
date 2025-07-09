@@ -35,9 +35,10 @@ This project investigates how active learning algorithms perform in a passive le
 | `Main.java`                | Runs experiments with different strategies.                  |
 | `ExampleBasedTeacher.java` | Custom teacher that simulates fixed dataset.               |
 | `DatasetLoader.java`       | Loads Abbadingo-style `.gz` datasets.                        |
-| `RandomDatasetGenerator.java` | Generates random data.                                    |
-| `Evaluator.java`           | Calculates MQcount, EQcount, Acceptance rate, etc.
-| `Algorithms.java`          | Factory for L* and TTT algorithms(Active Learners).          |
+| `TestsetLoader.java`       | Loads Abbadingo-style `.gz` testsets.                        |
+| `RandomDatasetGenerator.java` | Generates randomly dataset.                                    |
+| `Evaluator.java`           | Calculates MQcount, EQcount etc.
+| `Algorithms.java`          | Factory for L* and TTT algorithms.          |
 | `data/train.1.gz`          | Training sample (from Abbadingo)                             |
 | `data/test.1.gz`           | Test sample (from Abbadingo)                                 |
 
